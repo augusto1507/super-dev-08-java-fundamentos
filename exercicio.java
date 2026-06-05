@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 public class exercicio {
 
     public static void main(String[] args){
-        exemplo02();
+        exemplo04();
     }
 
 
@@ -75,4 +75,45 @@ public class exercicio {
             opcao = JOptionPane.showInputDialog("Deseja continuar? [sim/não]");
         }
     }
-}
+
+    public static void exemplo03(){
+        
+        String opcao = "";
+
+        while(!opcao.equals("não")){
+            String nome = JOptionPane.showInputDialog("Digite o nome");
+            int idade = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade"));
+            boolean autorizacao = Boolean.parseBoolean(JOptionPane.showInputDialog("Possui autorização? [true/false]"));
+
+            if(idade >= 18 || autorizacao == true){
+                JOptionPane.showMessageDialog(null, nome + " está autorizado a entrar");
+            }else{
+                JOptionPane.showMessageDialog(null, nome + " não está autorizado a entrar");
+            }
+
+            opcao = JOptionPane.showInputDialog("Deseja continuar? [sim/não]");
+        }
+    }
+
+    public static void exemplo04(){
+           String opcao = "";
+
+        while(!opcao.equals("não")){
+            String aluno = JOptionPane.showInputDialog("Digite o nome do aluno");
+            double nota1 = Double.parseDouble(JOptionPane.showInputDialog("Digite a primeira nota"));
+            double nota2 = Double.parseDouble(JOptionPane.showInputDialog("Digite a segunda nota"));
+            int faltas = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de faltas do aluno"));
+            double media = (nota1 + nota2) / 2;
+
+            if(media >= 7 && faltas <= 10){
+                JOptionPane.showMessageDialog(null, aluno + " foi aprovado");
+            }else if(media >= 5){
+                JOptionPane.showMessageDialog(null, aluno + " está em recuperação");
+            }else{
+                JOptionPane.showMessageDialog(null, aluno + " foi reprovado");
+            }
+
+            opcao = JOptionPane.showInputDialog("Deseja continuar? [sim/não]");
+        }
+    }
+}   
