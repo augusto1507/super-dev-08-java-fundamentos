@@ -363,4 +363,35 @@ public class Exercicios2 {
         );
     }
 
+    private void exemplo13(){
+        /*    O que deve ser feito:
+    - Criar um while para registrar 5 corridas de aplicativo.
+    - Para cada corrida, solicitar:
+      a) nome do passageiro
+      b) distância em quilômetros
+      c) tempo em minutos
+    - Classificar a corrida como curta, média ou longa.
+    - Considerar:
+      a) curta: até 5 km
+      b) média: acima de 5 km e até 15 km
+      c) longa: acima de 15 km
+    - Contar quantas corridas longas foram registradas.
+    - Ao final, apresentar a quantidade de corridas longas. */
+
+    int i = 0;
+    int quantidadelongas = 0;
+    while (i < 5) {
+        String nome = JOptionPane.showInputDialog("Digite o nome do passageiro");
+        double km = Double.parseDouble(JOptionPane.showInputDialog("Digite a distancia em km"));
+        int minutos = Integer.parseInt(JOptionPane.showInputDialog("Digite o tempo da corrida em minutos"));
+
+        if (km > 15) {
+            quantidadelongas ++;
+        }
+
+    }
+
+    JOptionPane.showMessageDialog(null, "Qunatidade de corridas longas: " + quantidadelongas);
+    }
+
 }
