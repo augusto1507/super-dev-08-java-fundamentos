@@ -2,7 +2,7 @@ import javax.swing.JOptionPane;
 
 public class Exercicios2 {
     public void executar() {
-        exemplo12();
+        exemplo14();
     }
 
     private void exemplo01() {
@@ -392,6 +392,70 @@ public class Exercicios2 {
     }
 
     JOptionPane.showMessageDialog(null, "Qunatidade de corridas longas: " + quantidadelongas);
+    }
+
+    private void exemplo14(){
+        /*    O que deve ser feito:
+    - Criar um menu com while.
+    - O menu deve ter as opções:
+      1 - Registrar visitante
+      2 - Mostrar total de visitantes
+      3 - Mostrar total de visitantes menores de idade
+      4 - Sair
+    - Enquanto o usuário não escolher a opção 4, o menu deve continuar aparecendo.
+    - Quando escolher 1:
+      - solicitar o nome do visitante
+      - solicitar a idade do visitante
+      - contar mais um visitante
+      - se for menor de idade, contar também como menor de idade
+    - Quando escolher 2, mostrar o total de visitantes.
+    - Quando escolher 3, mostrar o total de visitantes menores de idade.
+    - Quando escolher 4, encerrar o sistema.
+    - Para opção inválida, mostrar mensagem de erro. */
+
+    int opcao = Integer.parseInt(JOptionPane.showInputDialog("""
+            1 - Registrar visitante
+            2 - Mostrar total de visitantes
+            3 - Mostrar total de visitantes menores de idade
+            4 - Sair
+            """));
+
+
+            int totalDeVisitantes = 0;
+            int totalMenoresDeIdade = 0;
+        while (opcao != 4) {
+            switch (opcao) {
+                case 1:
+                    String nome = JOptionPane.showInputDialog("Digite o nome do visitante");
+                    int idade = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade do visitante"));
+                    totalDeVisitantes ++;
+                    if(idade < 18){
+                        totalMenoresDeIdade++;
+                    }
+                    break;
+
+                case 2:
+                    JOptionPane.showMessageDialog(null, "Total de visitantes: " + totalDeVisitantes);
+                    
+                    break;
+
+                case 3:
+                    JOptionPane.showMessageDialog(null, "Total de menores de idade: " + totalMenoresDeIdade);
+
+                    break; 
+
+                default:
+                    JOptionPane.showMessageDialog(null, "Opção invalida");
+                    
+            }
+
+            opcao = Integer.parseInt(JOptionPane.showInputDialog("""
+            1 - Registrar visitante
+            2 - Mostrar total de visitantes
+            3 - Mostrar total de visitantes menores de idade
+            4 - Sair
+            """));
+        }
     }
 
 }
